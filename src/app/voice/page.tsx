@@ -1,3 +1,4 @@
+
 "use client";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
@@ -11,6 +12,8 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import { DialogDescription, DialogTrigger } from "@radix-ui/react-dialog";
+import axios from "axios";
+import { CloudCog } from "lucide-react";
 import React, {
   MouseEvent,
   MouseEventHandler,
@@ -64,19 +67,24 @@ const page = () => {
       return;
     }
     const formData = new FormData();
-    formData.append("filename", data.file[0], data.fileName);
+    formData.append("file", data.file[0], data.fileName);
     try {
-      const res = await fetch(`http://${serverIp}/api/upload`);
-      if (res.status !== 200) {
-        toast({
-          title: "Something went wrong!",
-          description: "Please try Again",
-        });
-        return;
-      }
-      toast({
-        title: "File Change succesfully",
-      });
+      const res = await axios.post(`http://${serverIp}/api/upload`, formData, {
+        headers: {
+          "Content-Type": 'form-data'
+        }
+      })
+      // if (res !== 200) {
+      //   toast({
+      //     title: "Something went wrong!",
+      //     description: "Please try Again",
+      //   });
+      //   return;
+      // }
+      // toast({
+      //   title: "File Change succesfully",
+      // });
+      console.log(res)
     } catch (error) {
       console.log(error);
     }
