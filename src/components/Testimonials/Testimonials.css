@@ -1,0 +1,136 @@
+.testimonials {
+  position: relative;
+}
+.testimonials_heading {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+
+.side_blurr {
+  top: -100px;
+  left: 0px;
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  backdrop-filter: blur(11100px);
+  background: linear-gradient(
+    180deg,
+    rgba(188, 165, 255, 0) 0%,
+    #62abef53 100%
+  );
+  filter: blur(140px);
+  z-index: -1;
+}
+
+
+.testimonials_heading h1 {
+  font-size: 48px;
+  font-weight: 600;
+  max-width: 450px;
+}
+.testimonials_heading p {
+  font-size: 18px;
+  font-weight: 200;
+  max-width: 450px;
+}
+.testimonials_content {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  gap: 1rem;
+}
+.testimonials_card {
+  max-width: 320px;
+  max-height: 395px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 2.5rem;
+
+  /* margin: 2rem 1rem; */
+}
+.testimonials_card:hover {
+  background-color: rgba(55, 98, 138, 0.452);
+  color: transparent;
+  opacity: 1;
+  border-radius: 20px;
+  /* padding: 2rem 1rem; */
+}
+.testimonials_card img {
+  max-width: 34px;
+}
+.testimonials_card p {
+  font-size: 17.5px;
+  font-weight: 200;
+  /* margin: 2rem 0 1rem 0 ; */
+}
+.testimonials_card-profile img {
+  max-width: 48px;
+}
+.testimonials_card-person h3 {
+  font-size: 20px;
+  font-weight: 300;
+}
+.testimonials_card-person p {
+  font-size: 15.5px;
+  font-weight: 200;
+}
+.testimonials_card-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1550px) {
+}
+
+@media screen and (max-width: 1250px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .testimonials_content {
+    flex-wrap: wrap;
+    gap: 0;
+    
+  }
+  .testimonials_heading {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 8rem 1rem 2rem 1rem;
+  }
+  .testimonials_heading h1 {
+    font-size: 44px;
+    font-weight: 600;
+    max-width: 550px;
+    text-align: center;
+  }
+  .testimonials_heading p {
+    font-size: 17px;
+    font-weight: 200;
+    max-width: 550px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials_card{
+    gap: 1.8rem;
+  padding: 3rem 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .testimonials_heading {
+    max-width: 100%;
+  }
+  .testimonials_heading h1 {
+    font-size: 40px;
+  }
+}

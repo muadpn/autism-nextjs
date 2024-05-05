@@ -1,0 +1,36 @@
+.clients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 0 7rem 0;
+  gap: 3rem;
+}
+.clients_imgs img {
+  max-width: 170px;
+}
+
+@media screen and (min-width: 1550px) {
+}
+
+@media screen and (max-width: 1250px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .clients_imgs img {
+    max-width: 130px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .clients_imgs img {
+        max-width: 110px;
+      }
+    .clients {
+        gap: 1.5rem;
+        padding: 4rem 0 5rem 0;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 450px) {
+}

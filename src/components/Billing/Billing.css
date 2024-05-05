@@ -1,0 +1,128 @@
+.billing {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.billing_side-blur {
+  top: -600px;
+  left: -660px;
+  position: absolute;
+  width: 850px;
+  height: 1450px;
+  backdrop-filter: blur(1000px);
+  background: linear-gradient(
+    180deg,
+    rgba(188, 165, 255, 0) 0%,
+    #bbb1ff53 100%
+  );
+  filter: blur(170px);
+  z-index: -1;
+}
+
+.billing_img img {
+  max-width: 550px;
+}
+.billing_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 550px;
+}
+.billing_content h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+.billing_content p {
+  font-size: 17px;
+  font-weight: 200;
+  margin: 1rem 0 2.5rem 0;
+}
+
+.billing_content-imgs img {
+  max-width: 128px;
+}
+
+@media screen and (max-width: 1550px) {
+}
+
+@media screen and (max-width: 1250px) {
+  .billing_img img {
+    max-width: 500px;
+  }
+  .billing_content h1 {
+    font-size: 44px;
+  }
+  .billing_content p {
+    font-size: 15px;
+
+    margin: 1rem 0 2.5rem 0;
+  }
+
+  .billing_content-imgs img {
+    max-width: 120px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .billing_img img {
+    max-width: 400px;
+  }
+  .billing_content h1 {
+    font-size: 38px;
+  }
+  .billing_content p {
+    font-size: 14px;
+
+    margin: 1rem 0 2rem 0;
+  }
+  .billing_content {
+    max-width: 400px;
+  }
+  .billing_content-imgs img {
+    max-width: 120px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .billing {
+    padding-top: 4rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .billing_img img {
+    max-width: 500px;
+  }
+  .billing_content h1 {
+    font-size: 42px;
+  }
+  .billing_content p {
+    font-size: 15px;
+
+    margin: 1rem 0 2.5rem 0;
+  }
+
+  .billing_content-imgs img {
+    max-width: 120px;
+  }
+  .billing_content {
+    padding-top: 2rem;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+    .billing {
+        padding: 4rem 1rem 2rem 1rem ;
+    }
+  .billing_img img {
+    max-width: 100%;
+  }
+  .billing_content {
+    max-width: 100%;
+  }
+}

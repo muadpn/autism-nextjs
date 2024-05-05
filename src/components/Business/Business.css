@@ -1,0 +1,146 @@
+.business {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.business_content {
+  max-width: 600px;
+}
+.business_content > * {
+  margin: 1.7rem 0;
+}
+.business_content h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+.business_content p {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.business_features-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  gap: 1.8rem;
+  margin: 3rem 0;
+  padding: 0.5rem 1rem;
+}
+.business_features-content:hover {
+  background-color: rgba(55, 98, 138, 0.452);
+  color: transparent;
+  opacity: 1;
+  border-radius: 20px;
+ 
+
+}
+.business_content button:hover {
+background: linear-gradient(57.81deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%);
+}
+.business_features-content img {
+  width: 50px;
+}
+.business_features_text h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.business_features_text p {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+@media screen and (max-width: 1550px) {
+}
+
+@media screen and (max-width: 1250px) {
+  .business {
+    justify-content: space-evenly;
+    padding: 0 2rem;
+  }
+  .business_content {
+    max-width: 550px;
+  }
+  .business_content h1 {
+    font-size: 44px;
+  }
+  .business_content p {
+    font-size: 16.5px;
+  }
+  .business_features-content {
+    max-width: 400px;
+    gap: 1.8rem;
+    padding: 0rem 0;
+  }
+  .business_features-content img {
+    width: 48px;
+  }
+  .business_features_text h4 {
+    font-size: 16.5px;
+  }
+  .business_features_text p {
+    font-size: 14.5px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .business_content {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .business {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  .business_content {
+    max-width: 550px;
+  }
+  .business_content {
+    max-width: 550px;
+  }
+  .business_content h1 {
+    font-size: 44px;
+  }
+  .business_content p {
+    font-size: 17px;
+  }
+  .business_features-content {
+    max-width: 400px;
+    gap: 1.8rem;
+    padding: 0.4rem 0;
+  }
+  .business_features-content img {
+    width: 50px;
+  }
+  .business_features_text h4 {
+    font-size: 18px;
+  }
+  .business_features_text p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .business_features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .business_content {
+    max-width: 100%;
+  }
+  .business_features-content {
+    max-width: 70%;
+    
+  }
+  .business_features-content {
+    max-width: 400px;
+    gap: 1.2rem;
+    padding:  0;
+  }
+}

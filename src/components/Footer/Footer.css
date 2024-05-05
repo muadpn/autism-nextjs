@@ -1,0 +1,141 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* background-color: rgba(11, 10, 12, 0.6); */
+  max-width: 100%;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+  gap: 15rem;
+}
+.footer_main {
+  max-width: 280px;
+  padding-left: 2rem;
+}
+.footer_content {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+.footer * h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.footer * p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.footer_content-title h4 {
+  margin-bottom: 1rem;
+}
+.footer_content-links p {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.footer_split-line {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.388);
+  width: 75%;
+  margin: 0.5rem auto 2rem auto;
+}
+
+.footer_copyrights {
+  display: flex;
+  justify-content: space-around;
+  gap: 12rem;
+  padding-bottom: 2rem;
+}
+.footer_socialmedia {
+  max-width: 176px;
+}
+.footer_socialmedia img {
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.footer_copyrights p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 1550px) {
+}
+
+@media screen and (max-width: 1250px) {
+  .footer {
+    gap: 8rem;
+  }
+  .footer_content {
+    gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* .footer_content {
+    flex-wrap: wrap;
+  }
+  .footer_main {
+    flex-wrap: wrap;
+  } */
+  .footer {
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+  }
+  .footer {
+    align-items: start;
+    gap: 3rem;
+  }
+  .footer_copyrights {
+    justify-content: center;
+  }
+  .footer_content {
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .footer_copyrights {
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer_content {
+    justify-content: end;
+    margin-right: 1rem;
+  }
+  .footer_content-links {
+    text-align: end;
+  }
+  .footer_content-title {
+    text-align: end;
+  }
+}
+
+@media screen and (max-width: 655px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer_content {
+    /* justify-content: center; */
+    margin-left: 1.5rem;
+    justify-content: start;
+    gap: 2rem;
+  }
+  .footer_content-links {
+    text-align: start;
+  }
+  .footer_content-title {
+    text-align: start;
+  }
+  .footer_copyrights {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+}
+

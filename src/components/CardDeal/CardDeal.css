@@ -1,0 +1,96 @@
+.carddeal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4rem;
+}
+.carddeal_content {
+  max-width: 570px;
+}
+.carddeal_img img {
+  max-width: 570px;
+}
+.carddeal_content h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+.carddeal_content p {
+  font-size: 17px;
+  font-weight: 200;
+  margin: 2.5rem 0;
+}
+
+@media screen and (min-width: 1550px) {
+}
+
+@media screen and (max-width: 1250px) {
+  .carddeal_content {
+    max-width: 520px;
+  }
+  .carddeal_img img {
+    max-width: 500px;
+  }
+  .carddeal_content h1 {
+    font-size: 44px;
+  }
+  .carddeal_content p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .carddeal {
+    padding: 2rem 1rem 2rem 1rem;
+  }
+
+  .carddeal_content {
+    max-width: 450px;
+  }
+  .carddeal_img img {
+    max-width: 440px;
+  }
+  .carddeal_content h1 {
+    font-size: 40px;
+  }
+  .carddeal_content p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carddeal {
+    padding-top: 4rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carddeal_img img {
+    max-width: 500px;
+  }
+  .carddeal_content h1 {
+    font-size: 42px;
+  }
+  .carddeal_content p {
+    font-size: 15px;
+
+    /* margin: 1rem 0 2.5rem 0; */
+  }
+
+  .carddeal_content {
+    padding: 2rem 0;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+    .carddeal {
+        padding: 4rem 1rem 2rem 1rem ;
+    }
+  .carddeal_img img {
+    max-width: 100%;
+  }
+  .carddeal_content {
+    max-width: 100%;
+  }
+}

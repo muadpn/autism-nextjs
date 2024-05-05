@@ -1,0 +1,126 @@
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.stats_content {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  justify-content: space-around;
+  gap: 3.5rem;
+  margin: 6rem 0;
+}
+
+.stats_content h4 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.stats_content p {
+  font-size: 20px;
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  
+  background-clip: text;
+   background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.stats_content h5 {
+  font-size: 20px;
+  color: #fff;
+}
+
+@media screen and (max-width: 1550px) {
+  .stats {
+    gap: 1.5rem;
+  }
+  .stats_content {
+    gap: 1.5rem;
+  }
+  .stats_content h4 {
+    font-size: 40px;
+  }
+  .stats_content p {
+    font-size: 18px;
+  }
+  .stats_content h5 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .stats {
+    padding-top: 3rem;
+    gap: 1rem;
+  }
+  .stats_content {
+    gap: 1rem;
+  }
+  .stats_content h4 {
+    font-size: 25px;
+  }
+  .stats_content p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 3.5rem; */
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+  .stats_content h4 {
+    font-size: 45px;
+  }
+  .stats_content p {
+    font-size: 20px;
+  }
+  .stats_content h5 {
+    display: none;
+  }
+  .stats_content{
+    margin: 2rem ;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+}
+
+@media screen and (max-width: 650px) {
+  .stats {
+    padding-top: 5rem;
+  }
+  .stats_content {
+    max-width: 100%;
+  }
+  .stats_content h4 {
+    font-size: 35px;
+  }
+  .stats_content p {
+    font-size: 18px;
+  }
+
+}
