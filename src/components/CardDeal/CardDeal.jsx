@@ -1,5 +1,6 @@
 import "./CardDeal.css";
 import { card } from "../../assets";
+import Image from "next/image";
 
 const CardDeal = () => {
   return (
@@ -14,7 +15,7 @@ const CardDeal = () => {
       </div>
 
       <div className="carddeal_img">
-        <img src={card} alt="card" />
+        <Image src={card} alt="card" />
       </div>
     </div>
   );

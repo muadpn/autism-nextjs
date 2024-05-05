@@ -1,26 +1,26 @@
+"use client";
 import "./Navbar.css";
 import { logo } from "../../assets";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <nav className="navbar app_bg">
-      <figure className="navbar_logo">
-
-      </figure>
+      <figure className="navbar_logo"></figure>
       <div className="navbar_links">
-        <a href="#home" className="p_poppins">
+        <Link href="/" className="p_poppins">
           Home
-        </a>
+        </Link>
         <a href="#aboutus" className="p_poppins">
           Schedule
         </a>
-        <a href="#features" className="p_poppins">
+        <Link href="/voice" className="p_poppins">
           Voice Change
-        </a>
+        </Link>
         <a href="#solution" className="p_poppins">
           Analysis
         </a>

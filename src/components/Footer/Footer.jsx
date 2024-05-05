@@ -1,6 +1,7 @@
 import "./Footer.css";
 import { footerLinks, socialMedia } from "../../constants";
 import { logo } from "../../assets";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -30,7 +31,7 @@ const Footer = () => {
         <p>Copyright  | 2024 Assistive Device. All Rights Reserved.</p>
         <div className="footer_socialmedia">
           {socialMedia.map((media) => {
-            return <img key={media.id} src={media.icon} alt="icon" />;
+            return <Image key={media.id} src={media.icon} alt="icon" />;
           })}
         </div>
       </div>

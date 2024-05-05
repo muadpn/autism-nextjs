@@ -1,5 +1,6 @@
 import "./Header.css";
 import { discount, robot, arrowUp } from "../../assets";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -25,7 +26,7 @@ const Header = () => {
                   <div>
                     <span className="getstarted-span">
                       Get
-                      <img
+                      <Image
                         src={arrowUp}
                         alt="arrowup"
                         className="getstarted-span-img"

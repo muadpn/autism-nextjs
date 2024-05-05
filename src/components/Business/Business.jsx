@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { features } from "../../constants";
 import "./Business.css";
 
@@ -21,7 +22,7 @@ const Business = () => {
         {features.map((feature, index) => {
           return (
             <div key={feature.id + index} className="business_features-content">
-              <img src={feature.icon} alt="icon" />
+              <Image src={feature.icon} alt="icon" />
               <div className="business_features_text">
                 <h4>{feature.title}</h4>
                 <p>{feature.content}</p>

@@ -1,6 +1,7 @@
 import "./Testimonials.css";
 import { feedback } from "../../constants";
 import { quotes } from "../../assets";
+import Image from "next/image";
 
 const Testimonials = () => {
   return (
@@ -16,7 +17,7 @@ const Testimonials = () => {
 
               <p>{feed.content}</p>
               <div className="testimonials_card-profile">
-                <img src={feed.img} alt="profile" />
+                <Image src={feed.img} alt="profile" />
                 <div className="testimonials_card-person">
                   <h3>{feed.name}</h3>
                   <p>{feed.title}</p>
