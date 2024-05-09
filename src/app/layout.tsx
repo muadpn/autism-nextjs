@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 import { Toaster } from "@/components/ui/toaster";
+import ServerIpProvider from "@/Providers/ServerIpProvider";
 
 export default function RootLayout({
   children,
@@ -20,11 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <div className="app_bg">
-          <Navbar />
-        </div>
-        {children}
-        <Toaster />
+        <ServerIpProvider>
+          <div className="app_bg">
+            <Navbar />
+          </div>
+
+          {children}
+          <Toaster />
+        </ServerIpProvider>
       </body>
     </html>
   );
