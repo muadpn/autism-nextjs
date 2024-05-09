@@ -2,11 +2,28 @@
 import "./Navbar.css";
 import { logo } from "../../assets";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import { useState } from "react";
+import { MouseEvent, useContext, useState } from "react";
 import Link from "next/link";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "../ui/input";
+import { ServerIpConfig } from "@/Providers/ServerIpProvider";
+import { Button } from "../ui/button";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const { serverIp, handleChangeIp, setServerIp } = useContext(ServerIpConfig);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [ChangeIP, setChangeIP] = useState("");
+  // console.log("ChangeIP:", ChangeIP);
+  const handleChangeIpAddress = (e: MouseEvent) => {
+    e.preventDefault();
+    handleChangeIp(ChangeIP);
+  };
 
   return (
     <nav className="navbar app_bg">
@@ -15,9 +32,9 @@ const Navbar = () => {
         <Link href="/" className="p_poppins">
           Home
         </Link>
-        <a href="#aboutus" className="p_poppins">
+        <Link href="/schedule" className="p_poppins">
           Schedule
-        </a>
+        </Link>
         <Link href="/voice" className="p_poppins">
           Voice Change
         </Link>
@@ -25,6 +42,23 @@ const Navbar = () => {
           Analysis
         </a>
       </div>
+      <Dialog open={openDialog} onOpenChange={(v) => setOpenDialog(v)}>
+        <DialogTrigger>Change IP</DialogTrigger>
+        <DialogContent>
+          <DialogHeader>Change Ip</DialogHeader>
+          <DialogDescription>
+            You are Currently Connected to : {serverIp}
+          </DialogDescription>
+          <div className="mt-4 flex items-center flex-col gap-4 ">
+            <Input
+              value={ChangeIP}
+              onChange={(e) => setChangeIP(e.target.value)}
+              placeholder="0.0.0.0:3000"
+            />
+            <Button onClick={handleChangeIpAddress}>Change</Button>
+          </div>
+        </DialogContent>
+      </Dialog>
       <div className="navbar-smallscreens">
         {toggleMenu ? (
           <RiCloseLine

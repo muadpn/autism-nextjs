@@ -166,3 +166,7 @@ p {
 
 @media screen and (max-width: 450px) {
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: yellow;
+}

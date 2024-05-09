@@ -1,7 +1,13 @@
-
 "use client";
+import { ServerIpConfig } from "@/Providers/ServerIpProvider";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -11,23 +17,27 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
-import { DialogDescription, DialogTrigger } from "@radix-ui/react-dialog";
+// import { DialogDescription, DialogTrigger } from "@radix-ui/react-dialog";
 import axios from "axios";
 import { CloudCog } from "lucide-react";
 import React, {
   MouseEvent,
   MouseEventHandler,
+  useContext,
   useEffect,
   useState,
 } from "react";
 const IP_STORAGE_KEY = "esp-ip";
-type fileData = {
+export type fileData = {
   file: null | FileList;
   fileName: null | string;
 };
 const page = () => {
-  const [serverIp, setServerIp] = useState("0.0.0.0:3002");
-  const [ChangeIP, setChangeIP] = useState(serverIp);
+  // const [serverIp, setServerIp] = useState("0.0.0.0:3002");
+  // const [ChangeIP, setChangeIP] = useState(serverIp);
+  const { serverIp, handleChangeIp, setServerIp } = useContext(ServerIpConfig);
+  const { toast } = useToast();
+
   const [openDialog, setOpenDialog] = useState(false);
   useEffect(() => {
     const espip = window.localStorage.getItem(IP_STORAGE_KEY);
@@ -44,18 +54,22 @@ const page = () => {
     fileName: null,
   });
   const indexer = new Array(24).fill(null).map((item, i) => {
-    return `${i}.waw`;
+    return `${i}.wav`;
   });
-  const { toast } = useToast();
 
   const handleFile = async (e: MouseEvent) => {
     e.preventDefault();
-    console.log("jello");
-
     if (!data.fileName) {
       toast({
         title: "Invalid Data selected",
         description: "Please select a File to replace",
+      });
+      return;
+    }
+    if (!data.fileName.endsWith(".wav")) {
+      toast({
+        title: "Invalid Data selected",
+        description: "Please select a .wav file to upload.",
       });
       return;
     }
@@ -71,29 +85,35 @@ const page = () => {
     try {
       const res = await axios.post(`http://${serverIp}/api/upload`, formData, {
         headers: {
-          "Content-Type": 'form-data'
-        }
-      })
-      // if (res !== 200) {
-      //   toast({
-      //     title: "Something went wrong!",
-      //     description: "Please try Again",
-      //   });
-      //   return;
-      // }
-      // toast({
-      //   title: "File Change succesfully",
-      // });
-      console.log(res)
+          "Content-Type": "form-data",
+        },
+      });
+      let message = res.data;
+      if (typeof message !== "string") {
+        message = "Something went wrong";
+      }
+      if (res.status !== 200) {
+        toast({
+          title: "Something went wrong",
+          description: message,
+        });
+        return;
+      }
+      toast({
+        title: "File uploaded succesfully",
+      });
+      return;
     } catch (error) {
       console.log(error);
+      toast({
+        title: "Something went wrong",
+      });
+    } finally {
+      setData({
+        file: null,
+        fileName: null,
+      });
     }
-  };
-  const handleChangeIP = (e: MouseEvent) => {
-    e.preventDefault();
-    window.localStorage.setItem(IP_STORAGE_KEY, ChangeIP);
-    setServerIp(ChangeIP);
-    setOpenDialog(false);
   };
   return (
     <div className="app_bg  w-full h-full ">
@@ -108,23 +128,6 @@ const page = () => {
           You are currently Listening to
           <span> {serverIp} </span>
         </p>
-        <Dialog open={openDialog} onOpenChange={(v) => setOpenDialog(v)}>
-          <DialogTrigger>Change IP</DialogTrigger>
-          <DialogContent>
-            <DialogHeader>Change Ip</DialogHeader>
-            <DialogDescription>
-              Change your Ip Now eg: 192.168.0.1:3000
-            </DialogDescription>
-            <div className="mt-4 flex items-center flex-col gap-4 ">
-              <Input
-                value={ChangeIP}
-                onChange={(e) => setChangeIP(e.target.value)}
-                placeholder="0.0.0.0:3000"
-              />
-              <Button onClick={handleChangeIP}>Change</Button>
-            </div>
-          </DialogContent>
-        </Dialog>
       </div>
       <div className="flex items-center  gap-2 justify-center w-full h-full">
         <form action="">
